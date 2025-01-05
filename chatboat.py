@@ -16,9 +16,12 @@ st.sidebar.header("Upload PDF Documents")
 
 # File Upload Section
 uploaded_files = st.sidebar.file_uploader("Upload PDFs", type=["pdf"], accept_multiple_files=True)
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
+
 pc = pinecone.Pinecone(
-    api_key="pcsk_4yVF4i_ekg3zxdUEz9iw79PZDUCTzrZfTkGtMR6fDMj28i8hSuZtyUp8KXGe6uT3LjeZU",  # Replace with your actual API key
-    environment="us-west1-gcp"  # Replace with your actual environment
+    api_key=PINECONE_API_KEY,
+    environment=PINECONE_ENVIRONMENT
 )
 index_name="lanchainvector"
 if index_name not in pc.list_indexes().names():  # Use the client instance to list indexes
