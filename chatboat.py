@@ -11,7 +11,7 @@ from langchain.chains.question_answering import load_qa_chain
 
 from langchain.chat_models import ChatOpenAI
 load_dotenv()
-st.title("📚 AI Chatbot with PDF Knowledge Base")
+st.title("📚 AI Chatbot with PDF Knowledge")
 st.sidebar.header("Upload PDF Documents")
 
 # File Upload Section
